@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
                             InformatiiFiscale = parts[6],
                             DisponibilitateStoc = parts[7]
                         };
-                   
+                   //
                     }
                     catch(FormatException)
                     {
