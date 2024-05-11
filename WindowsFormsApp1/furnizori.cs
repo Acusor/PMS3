@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class furnizori : Form
     {
-        private List<Furnizori> furnizori;
+       
         public class Furnizori
         {
             public string Nume { get; set; }
@@ -65,8 +65,7 @@ namespace WindowsFormsApp1
                             InformatiiFiscale = parts[6],
                             DisponibilitateStoc = parts[7]
                         };
-                        furnizori.Add(funizor);
-                        AdaugaFurnizorLaFormular(furnizor);
+                   
                     }
                     catch(FormatException)
                     {
