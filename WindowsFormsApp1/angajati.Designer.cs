@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(angajati));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label30 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -92,7 +93,6 @@
             this.txtIDAngajatEditare = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -135,6 +135,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label30.Location = new System.Drawing.Point(7, 377);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(90, 22);
+            this.label30.TabIndex = 14;
+            this.label30.Text = "Optiuni:";
             // 
             // label17
             // 
@@ -298,7 +308,7 @@
             this.btnAnulareAngajati.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnulareAngajati.Image = ((System.Drawing.Image)(resources.GetObject("btnAnulareAngajati.Image")));
             this.btnAnulareAngajati.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnulareAngajati.Location = new System.Drawing.Point(629, 428);
+            this.btnAnulareAngajati.Location = new System.Drawing.Point(684, 427);
             this.btnAnulareAngajati.Name = "btnAnulareAngajati";
             this.btnAnulareAngajati.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAnulareAngajati.Size = new System.Drawing.Size(142, 37);
@@ -311,16 +321,16 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(35, 13);
+            this.label10.Location = new System.Drawing.Point(35, 19);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(192, 27);
+            this.label10.Size = new System.Drawing.Size(216, 27);
             this.label10.TabIndex = 30;
-            this.label10.Text = "Adauga angajati";
+            this.label10.Text = "Adaugare angajati";
             // 
             // radioButtonFeminin
             // 
             this.radioButtonFeminin.AutoSize = true;
-            this.radioButtonFeminin.Location = new System.Drawing.Point(177, 215);
+            this.radioButtonFeminin.Location = new System.Drawing.Point(177, 269);
             this.radioButtonFeminin.Name = "radioButtonFeminin";
             this.radioButtonFeminin.Size = new System.Drawing.Size(75, 20);
             this.radioButtonFeminin.TabIndex = 29;
@@ -331,7 +341,7 @@
             // radioButtonMasculin
             // 
             this.radioButtonMasculin.AutoSize = true;
-            this.radioButtonMasculin.Location = new System.Drawing.Point(40, 214);
+            this.radioButtonMasculin.Location = new System.Drawing.Point(40, 268);
             this.radioButtonMasculin.Name = "radioButtonMasculin";
             this.radioButtonMasculin.Size = new System.Drawing.Size(81, 20);
             this.radioButtonMasculin.TabIndex = 28;
@@ -343,7 +353,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(357, 268);
+            this.label9.Location = new System.Drawing.Point(357, 322);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 27);
             this.label9.TabIndex = 27;
@@ -353,7 +363,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(35, 268);
+            this.label8.Location = new System.Drawing.Point(35, 322);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 27);
             this.label8.TabIndex = 26;
@@ -363,7 +373,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(357, 158);
+            this.label7.Location = new System.Drawing.Point(357, 212);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 27);
             this.label7.TabIndex = 25;
@@ -373,7 +383,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(35, 158);
+            this.label6.Location = new System.Drawing.Point(35, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 27);
             this.label6.TabIndex = 24;
@@ -383,7 +393,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(357, 55);
+            this.label5.Location = new System.Drawing.Point(357, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 27);
             this.label5.TabIndex = 23;
@@ -393,7 +403,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(35, 55);
+            this.label4.Location = new System.Drawing.Point(35, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 27);
             this.label4.TabIndex = 22;
@@ -405,7 +415,7 @@
             this.btnAdaugaAngajati.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdaugaAngajati.Image = global::WindowsFormsApp1.Properties.Resources.add;
             this.btnAdaugaAngajati.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdaugaAngajati.Location = new System.Drawing.Point(629, 369);
+            this.btnAdaugaAngajati.Location = new System.Drawing.Point(684, 368);
             this.btnAdaugaAngajati.Name = "btnAdaugaAngajati";
             this.btnAdaugaAngajati.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAdaugaAngajati.Size = new System.Drawing.Size(142, 37);
@@ -416,7 +426,7 @@
             // 
             // txtFunctieAngajat
             // 
-            this.txtFunctieAngajat.Location = new System.Drawing.Point(40, 316);
+            this.txtFunctieAngajat.Location = new System.Drawing.Point(40, 370);
             this.txtFunctieAngajat.Multiline = true;
             this.txtFunctieAngajat.Name = "txtFunctieAngajat";
             this.txtFunctieAngajat.Size = new System.Drawing.Size(248, 31);
@@ -424,7 +434,7 @@
             // 
             // txtContactAngajat
             // 
-            this.txtContactAngajat.Location = new System.Drawing.Point(362, 316);
+            this.txtContactAngajat.Location = new System.Drawing.Point(362, 370);
             this.txtContactAngajat.Multiline = true;
             this.txtContactAngajat.Name = "txtContactAngajat";
             this.txtContactAngajat.Size = new System.Drawing.Size(248, 31);
@@ -432,7 +442,7 @@
             // 
             // txtIDAngajat
             // 
-            this.txtIDAngajat.Location = new System.Drawing.Point(362, 214);
+            this.txtIDAngajat.Location = new System.Drawing.Point(362, 268);
             this.txtIDAngajat.Multiline = true;
             this.txtIDAngajat.Name = "txtIDAngajat";
             this.txtIDAngajat.Size = new System.Drawing.Size(248, 31);
@@ -440,7 +450,7 @@
             // 
             // txtPrenumeAngajat
             // 
-            this.txtPrenumeAngajat.Location = new System.Drawing.Point(362, 104);
+            this.txtPrenumeAngajat.Location = new System.Drawing.Point(362, 158);
             this.txtPrenumeAngajat.Multiline = true;
             this.txtPrenumeAngajat.Name = "txtPrenumeAngajat";
             this.txtPrenumeAngajat.Size = new System.Drawing.Size(248, 31);
@@ -448,7 +458,7 @@
             // 
             // txtNumeAngajat
             // 
-            this.txtNumeAngajat.Location = new System.Drawing.Point(40, 104);
+            this.txtNumeAngajat.Location = new System.Drawing.Point(40, 158);
             this.txtNumeAngajat.Multiline = true;
             this.txtNumeAngajat.Name = "txtNumeAngajat";
             this.txtNumeAngajat.Size = new System.Drawing.Size(248, 31);
@@ -618,9 +628,9 @@
             this.label11.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label11.Location = new System.Drawing.Point(35, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(180, 27);
+            this.label11.Size = new System.Drawing.Size(204, 27);
             this.label11.TabIndex = 32;
-            this.label11.Text = "Cauta Angajati";
+            this.label11.Text = "Cautare Angajati";
             // 
             // listBoxRezultateCautare
             // 
@@ -814,9 +824,9 @@
             this.label12.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.Location = new System.Drawing.Point(35, 13);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(264, 27);
+            this.label12.Size = new System.Drawing.Size(252, 27);
             this.label12.TabIndex = 33;
-            this.label12.Text = "Actualizeaza Angajati";
+            this.label12.Text = "Actualizare Angajati";
             // 
             // label2
             // 
@@ -827,16 +837,6 @@
             this.label2.Size = new System.Drawing.Size(127, 32);
             this.label2.TabIndex = 2;
             this.label2.Text = "Angajati";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label30.Location = new System.Drawing.Point(7, 377);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(90, 22);
-            this.label30.TabIndex = 14;
-            this.label30.Text = "Optiuni:";
             // 
             // angajati
             // 

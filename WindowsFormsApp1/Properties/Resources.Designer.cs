@@ -103,6 +103,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pharmacy_icon {
+            get {
+                object obj = ResourceManager.GetObject("pharmacy-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pharmacy_symbol_icon_451x512_j6bin07g {
             get {
                 object obj = ResourceManager.GetObject("pharmacy-symbol-icon-451x512-j6bin07g", resourceCulture);

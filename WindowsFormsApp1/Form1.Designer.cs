@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,6 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -57,8 +59,18 @@
             this.panel1.Controls.Add(this.angajati);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(287, 761);
+            this.panel1.Size = new System.Drawing.Size(287, 905);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(94, 168);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 37);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "PMS";
             // 
             // button2
             // 
@@ -94,9 +106,9 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(78, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(136, 133);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -169,7 +181,7 @@
             this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1515, 40);
+            this.panel2.Size = new System.Drawing.Size(1754, 40);
             this.panel2.TabIndex = 1;
             // 
             // mainpanel
@@ -195,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 638);
+            this.ClientSize = new System.Drawing.Size(1159, 628);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -203,6 +215,7 @@
             this.Name = "Form1";
             this.Text = "PMS";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainpanel.ResumeLayout(false);
             this.mainpanel.PerformLayout();
@@ -223,6 +236,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
     }
 }
 

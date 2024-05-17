@@ -34,19 +34,33 @@ namespace WindowsFormsApp1
 
         }
 
+        private void ResetButtonColors()
+        {
+            btnStock.BackColor = Color.White;
+            angajati.BackColor = Color.White;
+            furnizori.BackColor = Color.White;
+
+        }
+
         private void btnStock_Click(object sender, EventArgs e)
         {
+            ResetButtonColors();
             loadform(new stock());
+            btnStock.BackColor = Color.Cornsilk;
         }
 
         private void angajati_Click(object sender, EventArgs e)
         {
+            ResetButtonColors();
             loadform(new angajati());
+            angajati.BackColor = Color.Cornsilk;
         }
 
         private void furnizori_Click(object sender, EventArgs e)
         {
+            ResetButtonColors();
             loadform(new furnizori());
+            furnizori.BackColor = Color.Cornsilk;
         }
 
         private void iesire_Click(object sender, EventArgs e)
