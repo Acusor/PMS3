@@ -52,6 +52,12 @@
     <Compile Include="angajati.Designer.cs">
       <DependentUpon>angajati.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configurare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configurare.Designer.cs">
+      <DependentUpon>Configurare.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="angajati.resx">
       <DependentUpon>angajati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configurare.resx">
+      <DependentUpon>Configurare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

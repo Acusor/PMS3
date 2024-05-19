@@ -46,8 +46,10 @@ namespace WindowsFormsApp1
                 tab.Text = "";
             }
 
-
+            cmbCriteriuCautareMedicamente.Items.AddRange(new string[] { "Nume", "Furnizor", "Pret", "Cantitate", "ID", "D/E" });
         }
+
+        
 
 
         private void AfiseazaMedicamente()
@@ -173,45 +175,30 @@ namespace WindowsFormsApp1
 
         private void btnAdaugareMedicamente_Click(object sender, EventArgs e)
         {
-            /*flowLayoutPanelMedicamente.Controls.Clear();
-            btnAdaugareMedicamente.Dispose();
-            btnEditareMedicamente.Dispose();
-            btnCautareMedicamente.Dispose();
-            btnStergereMedicamente.Dispose();*/
+            
             tabControl1.SelectedTab = tabPage2;
 
         }
 
         private void btnEditareMedicamente_Click(object sender, EventArgs e)
         {
-          /*  flowLayoutPanelMedicamente.Controls.Clear();
-            btnAdaugareMedicamente.Dispose();
-            btnEditareMedicamente.Dispose();
-            btnCautareMedicamente.Dispose();
-            btnStergereMedicamente.Dispose();*/
+          
             tabControl1.SelectedTab = tabPage4;
         }
 
         private void btnCautareMedicamente_Click(object sender, EventArgs e)
         {
-           /* flowLayoutPanelMedicamente.Controls.Clear();
-            btnAdaugareMedicamente.Dispose();
-            btnEditareMedicamente.Dispose();
-            btnCautareMedicamente.Dispose();
-            btnStergereMedicamente.Dispose();*/
+           
             tabControl1.SelectedTab = tabPage3;
+            listBoxRezultateCautareMedicamente.Visible = false;
 
-            
+
 
         }
 
         private void btnStergereMedicamente_Click(object sender, EventArgs e)
         {
-           /* flowLayoutPanelMedicamente.Controls.Clear();
-             btnAdaugareMedicamente.Dispose();
-             btnEditareMedicamente.Dispose();
-             btnCautareMedicamente.Dispose();
-             btnStergereMedicamente.Dispose();*/
+      
              tabControl1.SelectedTab = tabPage5;
         }
 
@@ -299,6 +286,8 @@ namespace WindowsFormsApp1
             txtCantitate.Text = "";
             txtIDMedicament.Text="";
             txtDataExpirare.Text = "";
+
+           
         }
 
         private void txtNumeCautat_TextChanged(object sender, EventArgs e)
@@ -323,35 +312,94 @@ namespace WindowsFormsApp1
 
         private void CautaMedicamente_Click(object sender, EventArgs e)
         {
-
-            flowLayoutPanelMedicamente.Controls.Clear();
-            // Obține criteriile de căutare introduse de utilizator
-            string numeCautat = txtNumeCautat.Text.Trim();
-            string producatorCautat = txtProducatorCautat.Text.Trim();
-            decimal pretMinim = string.IsNullOrWhiteSpace(txtPretMin.Text) ? MinPret : decimal.Parse(txtPretMin.Text);
-            decimal pretMaxim = string.IsNullOrWhiteSpace(txtPretMax.Text) ? decimal.MaxValue : decimal.Parse(txtPretMax.Text);
-
-            // Caută medicamentele în listă în funcție de criteriile specificate
-            var medicamenteCautate = medicamente.Where(med =>
-                (string.IsNullOrWhiteSpace(numeCautat) || med.Nume.ToLower().Contains(numeCautat.ToLower())) &&
-                (string.IsNullOrWhiteSpace(producatorCautat) || med.Producator.ToLower().Contains(producatorCautat.ToLower())) &&
-                (med.Pret >= pretMinim && med.Pret <= pretMaxim)
-            );
-            
-
-            // Afisează rezultatele căutării
-            foreach (var medicament in medicamenteCautate)
+            // Verificăm dacă s-a selectat un criteriu de căutare și s-a introdus o valoare pentru căutare
+            if (string.IsNullOrWhiteSpace(txtCautareMedicament.Text) || cmbCriteriuCautareMedicamente.SelectedIndex == -1)
             {
-                AdaugaMedicamentLaFormular(medicament);
+                MessageBox.Show("Selectați un criteriu de căutare și introduceți o valoare pentru căutare.");
+                return;
             }
 
-            // Afisează un mesaj dacă nu s-au găsit rezultate
-            if (!medicamenteCautate.Any())
+            // Obținem criteriul de căutare și valoarea căutată din interfață
+            string criteriu = cmbCriteriuCautareMedicamente.SelectedItem.ToString();
+            string valoareCautata = txtCautareMedicament.Text.ToLower(); // Folosim ToLower pentru a face căutarea insensibilă la majuscule/minuscule
+
+            // Creăm o listă pentru stocarea rezultatelor căutării
+            List<Medicament> rezultateCautare = new List<Medicament>();
+
+            // Căutăm în lista de medicamente în funcție de criteriul selectat
+            switch (criteriu)
             {
-                MessageBox.Show("Nu s-au găsit medicamente conform criteriilor de căutare.");
+                case "Nume":
+                    rezultateCautare = medicamente.Where(medicament => medicament.Nume.ToLower().Contains(valoareCautata)).ToList();
+                    break;
+                case "Producator":
+                    rezultateCautare = medicamente.Where(medicament => medicament.Producator.ToLower().Contains(valoareCautata)).ToList();
+                    break;
+                case "Pret":
+                    if (decimal.TryParse(valoareCautata, out decimal pretCautat))
+                    {
+                        rezultateCautare = medicamente.Where(medicament => medicament.Pret == pretCautat).ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Introduceți un preț valid pentru căutare.");
+                        return;
+                    }
+                    break;
+                case "Cantitate":
+                    if (int.TryParse(valoareCautata, out int cantitateCautata))
+                    {
+                        rezultateCautare = medicamente.Where(medicament => medicament.Cantitate == cantitateCautata).ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Introduceți o cantitate validă pentru căutare.");
+                        return;
+                    }
+                    break;
+                case "ID":
+                    if (int.TryParse(valoareCautata, out int idCautat))
+                    {
+                        rezultateCautare = medicamente.Where(medicament => medicament.ID == idCautat).ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Introduceți un ID valid pentru căutare.");
+                        return;
+                    }
+                    break;
+                case "D/E":
+                    if (DateTime.TryParseExact(valoareCautata, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataExpirareCautata))
+                    {
+                        rezultateCautare = medicamente.Where(medicament => medicament.DataExpirare.Date == dataExpirareCautata.Date).ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Introduceți o dată de expirare validă pentru căutare. Folosiți formatul dd/MM/yyyy.");
+                        return;
+                    }
+                    break;
+
+            
+            }
+
+            listBoxRezultateCautareMedicamente.Visible = true;
+
+            // Afisăm rezultatele în ListBox
+            listBoxRezultateCautareMedicamente.Items.Clear();
+            if (rezultateCautare.Any())
+            {
+                foreach (Medicament medicament in rezultateCautare)
+                {
+                    listBoxRezultateCautareMedicamente.Items.Add($"Nume: {medicament.Nume}, Producator: {medicament.Producator}, Pret: {medicament.Pret} lei, Cantitate: {medicament.Cantitate} bucati, ID: {medicament.ID}, Data Expirare: {medicament.DataExpirare.ToString("dd/MM/yyyy")}");
+                }
             }
             else
-            tabControl1.SelectedTab = tabPage1;
+            {
+                listBoxRezultateCautareMedicamente.Items.Add("Niciun rezultat găsit pentru criteriul și valoarea specificate.");
+            }
+
+         
         }
 
 
@@ -411,6 +459,8 @@ namespace WindowsFormsApp1
                 // Oferă feedback că medicamentul nu a fost găsit
                 MessageBox.Show("Nu s-a găsit niciun medicament cu ID-ul specificat.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            
         }
 
 

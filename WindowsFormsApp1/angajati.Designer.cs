@@ -269,7 +269,7 @@
             // 
             // flowLayoutPanelAngajati
             // 
-            this.flowLayoutPanelAngajati.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.flowLayoutPanelAngajati.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.flowLayoutPanelAngajati.Location = new System.Drawing.Point(6, 50);
             this.flowLayoutPanelAngajati.Name = "flowLayoutPanelAngajati";
             this.flowLayoutPanelAngajati.Size = new System.Drawing.Size(884, 311);
@@ -320,12 +320,12 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Font = new System.Drawing.Font("Cascadia Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label10.Location = new System.Drawing.Point(35, 19);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(216, 27);
+            this.label10.Size = new System.Drawing.Size(161, 37);
             this.label10.TabIndex = 30;
-            this.label10.Text = "Adaugare angajati";
+            this.label10.Text = "Adaugare ";
             // 
             // radioButtonFeminin
             // 
@@ -530,12 +530,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Font = new System.Drawing.Font("Cascadia Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(34, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 27);
+            this.label3.Size = new System.Drawing.Size(145, 37);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Stergere Angajati";
+            this.label3.Text = "Stergere";
             // 
             // tabPage4
             // 
@@ -625,12 +625,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Font = new System.Drawing.Font("Cascadia Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label11.Location = new System.Drawing.Point(35, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(204, 27);
+            this.label11.Size = new System.Drawing.Size(145, 37);
             this.label11.TabIndex = 32;
-            this.label11.Text = "Cautare Angajati";
+            this.label11.Text = "Cautare ";
             // 
             // listBoxRezultateCautare
             // 
@@ -821,12 +821,12 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Font = new System.Drawing.Font("Cascadia Mono", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.Location = new System.Drawing.Point(35, 13);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(252, 27);
+            this.label12.Size = new System.Drawing.Size(209, 37);
             this.label12.TabIndex = 33;
-            this.label12.Text = "Actualizare Angajati";
+            this.label12.Text = "Actualizare ";
             // 
             // label2
             // 

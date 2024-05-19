@@ -63,9 +63,18 @@ namespace WindowsFormsApp1
             furnizori.BackColor = Color.Cornsilk;
         }
 
+        private void Configurare_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            loadform(new Configurare());
+            Configurare.BackColor = Color.Cornsilk;
+        }
+
+
         private void iesire_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
     }
 }

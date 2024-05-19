@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Configurare = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iesire = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.Configurare);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.iesire);
@@ -72,20 +72,21 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "PMS";
             // 
-            // button2
+            // Configurare
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.Image = global::WindowsFormsApp1.Properties.Resources.settings;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(30, 408);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(208, 47);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "CONFIGURARE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Configurare.BackColor = System.Drawing.Color.White;
+            this.Configurare.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Configurare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Configurare.Image = global::WindowsFormsApp1.Properties.Resources.settings;
+            this.Configurare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Configurare.Location = new System.Drawing.Point(30, 408);
+            this.Configurare.Name = "Configurare";
+            this.Configurare.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Configurare.Size = new System.Drawing.Size(208, 47);
+            this.Configurare.TabIndex = 8;
+            this.Configurare.Text = "CONFIGURARE";
+            this.Configurare.UseVisualStyleBackColor = false;
+            this.Configurare.Click += new System.EventHandler(this.Configurare_Click);
             // 
             // button1
             // 
@@ -235,7 +236,7 @@
         private System.Windows.Forms.Panel mainpanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Configurare;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -61,16 +61,11 @@
             this.txtNume = new System.Windows.Forms.TextBox();
             this.btnAdaugaMedicamnete = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listBoxRezultateCautareMedicamente = new System.Windows.Forms.ListBox();
+            this.cmbCriteriuCautareMedicamente = new System.Windows.Forms.ComboBox();
+            this.txtCautareMedicament = new System.Windows.Forms.TextBox();
             this.btnAnulare2 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtPretMax = new System.Windows.Forms.TextBox();
-            this.txtPretMin = new System.Windows.Forms.TextBox();
-            this.txtProducatorCautat = new System.Windows.Forms.TextBox();
-            this.txtNumeCautat = new System.Windows.Forms.TextBox();
             this.CautaMedicamente = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -95,6 +90,8 @@
             this.txtIDMedicamentStergere = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -105,7 +102,7 @@
             // 
             // flowLayoutPanelMedicamente
             // 
-            this.flowLayoutPanelMedicamente.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.flowLayoutPanelMedicamente.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.flowLayoutPanelMedicamente.Location = new System.Drawing.Point(7, 28);
             this.flowLayoutPanelMedicamente.Name = "flowLayoutPanelMedicamente";
             this.flowLayoutPanelMedicamente.Size = new System.Drawing.Size(884, 311);
@@ -208,7 +205,7 @@
             this.btnEditareMedicamente.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnEditareMedicamente.Size = new System.Drawing.Size(208, 47);
             this.btnEditareMedicamente.TabIndex = 4;
-            this.btnEditareMedicamente.Text = "Editare";
+            this.btnEditareMedicamente.Text = "Actualizare";
             this.btnEditareMedicamente.UseVisualStyleBackColor = false;
             this.btnEditareMedicamente.Click += new System.EventHandler(this.btnEditareMedicamente_Click);
             // 
@@ -373,7 +370,7 @@
             this.txtDataExpirare.Location = new System.Drawing.Point(463, 337);
             this.txtDataExpirare.Multiline = true;
             this.txtDataExpirare.Name = "txtDataExpirare";
-            this.txtDataExpirare.Size = new System.Drawing.Size(169, 31);
+            this.txtDataExpirare.Size = new System.Drawing.Size(248, 31);
             this.txtDataExpirare.TabIndex = 16;
             this.txtDataExpirare.TextChanged += new System.EventHandler(this.txtDataExpirare_TextChanged);
             // 
@@ -392,7 +389,7 @@
             this.txtCantitate.Location = new System.Drawing.Point(48, 337);
             this.txtCantitate.Multiline = true;
             this.txtCantitate.Name = "txtCantitate";
-            this.txtCantitate.Size = new System.Drawing.Size(169, 31);
+            this.txtCantitate.Size = new System.Drawing.Size(248, 31);
             this.txtCantitate.TabIndex = 14;
             this.txtCantitate.TextChanged += new System.EventHandler(this.txtCantitate_TextChanged);
             // 
@@ -421,7 +418,7 @@
             this.txtPret.Location = new System.Drawing.Point(464, 214);
             this.txtPret.Multiline = true;
             this.txtPret.Name = "txtPret";
-            this.txtPret.Size = new System.Drawing.Size(169, 31);
+            this.txtPret.Size = new System.Drawing.Size(248, 31);
             this.txtPret.TabIndex = 11;
             this.txtPret.TextChanged += new System.EventHandler(this.txtPret_TextChanged);
             // 
@@ -430,7 +427,7 @@
             this.txtProducator.Location = new System.Drawing.Point(48, 214);
             this.txtProducator.Multiline = true;
             this.txtProducator.Name = "txtProducator";
-            this.txtProducator.Size = new System.Drawing.Size(169, 31);
+            this.txtProducator.Size = new System.Drawing.Size(248, 31);
             this.txtProducator.TabIndex = 10;
             this.txtProducator.TextChanged += new System.EventHandler(this.txtProducator_TextChanged);
             // 
@@ -439,7 +436,7 @@
             this.txtIDMedicament.Location = new System.Drawing.Point(463, 106);
             this.txtIDMedicament.Multiline = true;
             this.txtIDMedicament.Name = "txtIDMedicament";
-            this.txtIDMedicament.Size = new System.Drawing.Size(169, 31);
+            this.txtIDMedicament.Size = new System.Drawing.Size(248, 31);
             this.txtIDMedicament.TabIndex = 9;
             this.txtIDMedicament.TextChanged += new System.EventHandler(this.txtIDMedicament_TextChanged);
             // 
@@ -448,7 +445,7 @@
             this.txtNume.Location = new System.Drawing.Point(48, 106);
             this.txtNume.Multiline = true;
             this.txtNume.Name = "txtNume";
-            this.txtNume.Size = new System.Drawing.Size(169, 31);
+            this.txtNume.Size = new System.Drawing.Size(248, 31);
             this.txtNume.TabIndex = 8;
             this.txtNume.TextChanged += new System.EventHandler(this.txtNume_TextChanged);
             // 
@@ -469,16 +466,13 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btnAnulare2);
-            this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.txtPretMax);
-            this.tabPage3.Controls.Add(this.txtPretMin);
-            this.tabPage3.Controls.Add(this.txtProducatorCautat);
-            this.tabPage3.Controls.Add(this.txtNumeCautat);
+            this.tabPage3.Controls.Add(this.listBoxRezultateCautareMedicamente);
+            this.tabPage3.Controls.Add(this.cmbCriteriuCautareMedicamente);
+            this.tabPage3.Controls.Add(this.txtCautareMedicament);
+            this.tabPage3.Controls.Add(this.btnAnulare2);
+            this.tabPage3.Controls.Add(this.label20);
             this.tabPage3.Controls.Add(this.CautaMedicamente);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -488,13 +482,39 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // listBoxRezultateCautareMedicamente
+            // 
+            this.listBoxRezultateCautareMedicamente.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxRezultateCautareMedicamente.FormattingEnabled = true;
+            this.listBoxRezultateCautareMedicamente.ItemHeight = 17;
+            this.listBoxRezultateCautareMedicamente.Location = new System.Drawing.Point(6, 61);
+            this.listBoxRezultateCautareMedicamente.Name = "listBoxRezultateCautareMedicamente";
+            this.listBoxRezultateCautareMedicamente.Size = new System.Drawing.Size(888, 174);
+            this.listBoxRezultateCautareMedicamente.TabIndex = 37;
+            // 
+            // cmbCriteriuCautareMedicamente
+            // 
+            this.cmbCriteriuCautareMedicamente.FormattingEnabled = true;
+            this.cmbCriteriuCautareMedicamente.Location = new System.Drawing.Point(31, 318);
+            this.cmbCriteriuCautareMedicamente.Name = "cmbCriteriuCautareMedicamente";
+            this.cmbCriteriuCautareMedicamente.Size = new System.Drawing.Size(248, 24);
+            this.cmbCriteriuCautareMedicamente.TabIndex = 36;
+            // 
+            // txtCautareMedicament
+            // 
+            this.txtCautareMedicament.Location = new System.Drawing.Point(31, 407);
+            this.txtCautareMedicament.Multiline = true;
+            this.txtCautareMedicament.Name = "txtCautareMedicament";
+            this.txtCautareMedicament.Size = new System.Drawing.Size(248, 31);
+            this.txtCautareMedicament.TabIndex = 35;
+            // 
             // btnAnulare2
             // 
             this.btnAnulare2.BackColor = System.Drawing.Color.White;
             this.btnAnulare2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnulare2.Image = ((System.Drawing.Image)(resources.GetObject("btnAnulare2.Image")));
             this.btnAnulare2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnulare2.Location = new System.Drawing.Point(690, 435);
+            this.btnAnulare2.Location = new System.Drawing.Point(668, 410);
             this.btnAnulare2.Name = "btnAnulare2";
             this.btnAnulare2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAnulare2.Size = new System.Drawing.Size(142, 37);
@@ -513,89 +533,13 @@
             this.label20.TabIndex = 18;
             this.label20.Text = "Cautare";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(414, 242);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(90, 22);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Pret max";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(26, 242);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(90, 22);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Pret min";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(414, 102);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(110, 22);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Producator";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(26, 102);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 22);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Nume";
-            // 
-            // txtPretMax
-            // 
-            this.txtPretMax.Location = new System.Drawing.Point(418, 279);
-            this.txtPretMax.Multiline = true;
-            this.txtPretMax.Name = "txtPretMax";
-            this.txtPretMax.Size = new System.Drawing.Size(241, 31);
-            this.txtPretMax.TabIndex = 12;
-            this.txtPretMax.TextChanged += new System.EventHandler(this.txtPretMax_TextChanged);
-            // 
-            // txtPretMin
-            // 
-            this.txtPretMin.Location = new System.Drawing.Point(30, 279);
-            this.txtPretMin.Multiline = true;
-            this.txtPretMin.Name = "txtPretMin";
-            this.txtPretMin.Size = new System.Drawing.Size(241, 31);
-            this.txtPretMin.TabIndex = 11;
-            this.txtPretMin.TextChanged += new System.EventHandler(this.txtPretMin_TextChanged);
-            // 
-            // txtProducatorCautat
-            // 
-            this.txtProducatorCautat.Location = new System.Drawing.Point(418, 146);
-            this.txtProducatorCautat.Multiline = true;
-            this.txtProducatorCautat.Name = "txtProducatorCautat";
-            this.txtProducatorCautat.Size = new System.Drawing.Size(241, 31);
-            this.txtProducatorCautat.TabIndex = 10;
-            this.txtProducatorCautat.TextChanged += new System.EventHandler(this.txtProducatorCautat_TextChanged);
-            // 
-            // txtNumeCautat
-            // 
-            this.txtNumeCautat.Location = new System.Drawing.Point(30, 146);
-            this.txtNumeCautat.Multiline = true;
-            this.txtNumeCautat.Name = "txtNumeCautat";
-            this.txtNumeCautat.Size = new System.Drawing.Size(241, 31);
-            this.txtNumeCautat.TabIndex = 9;
-            this.txtNumeCautat.TextChanged += new System.EventHandler(this.txtNumeCautat_TextChanged);
-            // 
             // CautaMedicamente
             // 
             this.CautaMedicamente.BackColor = System.Drawing.Color.White;
             this.CautaMedicamente.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CautaMedicamente.Image = global::WindowsFormsApp1.Properties.Resources.search;
             this.CautaMedicamente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CautaMedicamente.Location = new System.Drawing.Point(690, 377);
+            this.CautaMedicamente.Location = new System.Drawing.Point(668, 352);
             this.CautaMedicamente.Name = "CautaMedicamente";
             this.CautaMedicamente.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CautaMedicamente.Size = new System.Drawing.Size(142, 37);
@@ -861,6 +805,26 @@
             this.label22.TabIndex = 1;
             this.label22.Text = "Stergere";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(26, 271);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 27);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Criteriu:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(26, 362);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(216, 27);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Introducere date:";
+            // 
             // stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -918,15 +882,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txtNumeCautat;
-        private System.Windows.Forms.TextBox txtPretMax;
-        private System.Windows.Forms.TextBox txtPretMin;
-        private System.Windows.Forms.TextBox txtProducatorCautat;
         private System.Windows.Forms.Button CautaMedicamente;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtIDMedicamentActualizat;
@@ -955,5 +911,10 @@
         private System.Windows.Forms.Button btnAnulare2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cmbCriteriuCautareMedicamente;
+        private System.Windows.Forms.TextBox txtCautareMedicament;
+        private System.Windows.Forms.ListBox listBoxRezultateCautareMedicamente;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
