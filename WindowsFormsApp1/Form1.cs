@@ -72,6 +72,18 @@ namespace WindowsFormsApp1
 
         private void iesire_Click(object sender, EventArgs e)
         {
+            ResetButtonColors();
+            iesire.BackColor = Color.Cornsilk;
+            var result = MessageBox.Show("Sigur vrei sa iesi? :(", "Iesire PMS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                iesire.BackColor = Color.White;
+                return;
+            }
             Application.Exit();
         }
 
@@ -80,7 +92,7 @@ namespace WindowsFormsApp1
             ResetButtonColors();
             loadform(new Info());
             Info.BackColor = Color.Cornsilk;
-        }
+        } 
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
