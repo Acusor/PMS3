@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pharmacy-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pharmacy-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pharmacy-symbol-icon-451x512-j6bin07g" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pharmacy-symbol-icon-451x512-j6bin07g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,6 +139,9 @@
   <data name="64176" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\64176.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="members-only (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\members-only (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="undo-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undo-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,7 +151,7 @@
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pharmacy-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pharmacy-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pharmacy-icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pharmacy-icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

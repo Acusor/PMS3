@@ -312,21 +312,20 @@ namespace WindowsFormsApp1
 
         private void CautaMedicamente_Click(object sender, EventArgs e)
         {
-            // Verificăm dacă s-a selectat un criteriu de căutare și s-a introdus o valoare pentru căutare
+          
             if (string.IsNullOrWhiteSpace(txtCautareMedicament.Text) || cmbCriteriuCautareMedicamente.SelectedIndex == -1)
             {
                 MessageBox.Show("Selectați un criteriu de căutare și introduceți o valoare pentru căutare.");
                 return;
             }
 
-            // Obținem criteriul de căutare și valoarea căutată din interfață
+         
             string criteriu = cmbCriteriuCautareMedicamente.SelectedItem.ToString();
-            string valoareCautata = txtCautareMedicament.Text.ToLower(); // Folosim ToLower pentru a face căutarea insensibilă la majuscule/minuscule
-
-            // Creăm o listă pentru stocarea rezultatelor căutării
+            string valoareCautata = txtCautareMedicament.Text.ToLower();
+          
             List<Medicament> rezultateCautare = new List<Medicament>();
 
-            // Căutăm în lista de medicamente în funcție de criteriul selectat
+          
             switch (criteriu)
             {
                 case "Nume":
@@ -385,7 +384,7 @@ namespace WindowsFormsApp1
 
             listBoxRezultateCautareMedicamente.Visible = true;
 
-            // Afisăm rezultatele în ListBox
+           
             listBoxRezultateCautareMedicamente.Items.Clear();
             if (rezultateCautare.Any())
             {
@@ -415,48 +414,48 @@ namespace WindowsFormsApp1
 
 
 
-            // Verifică dacă prețul introdus este un număr decimal valid
+          
             if (!decimal.TryParse(txtPretActualizat.Text, out decimal pretActualizat) || pretActualizat < MinPret)
             {
                 MessageBox.Show("Prețul introdus nu este valid.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Verifică dacă cantitatea introdusă este un număr valid
+           
             if (!int.TryParse(txtCantitateActualizata.Text, out int cantitateActualizata) || cantitateActualizata < 0)
             {
                 MessageBox.Show("Cantitatea introdusă nu este validă.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Verifică dacă data de expirare introdusă este într-un format valid
+           
             if (!DateTime.TryParseExact(txtDataExpirareActualizata.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataExpirareActualizata))
             {
                 MessageBox.Show("Data de expirare introdusă nu este validă. Folosiți formatul dd/MM/yyyy.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Găsește medicamentul în listă bazat pe ID-ul introdus
+           
             var medicamentEditat = medicamente.FirstOrDefault(med => med.ID == idActualizat);
 
             if (medicamentEditat != null)
             {
-                // Actualizează informațiile medicamentului cu noile valori introduse de utilizator
+               
                 medicamentEditat.Nume = txtNumeActualizat.Text;
                 medicamentEditat.Producator = txtProducatorActualizat.Text;
                 medicamentEditat.Pret = decimal.Parse(txtPretActualizat.Text);
                 medicamentEditat.Cantitate = int.Parse(txtCantitateActualizata.Text);
                 medicamentEditat.DataExpirare = DateTime.ParseExact(txtDataExpirareActualizata.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-                // Actualizează fișierul de date cu modificările efectuate
+               
                 ActualizeazaFisierulDeDate();
 
-                // Oferă feedback că editarea s-a realizat cu succes
+               
                 MessageBox.Show("Medicamentul a fost actualizat cu succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Oferă feedback că medicamentul nu a fost găsit
+                
                 MessageBox.Show("Nu s-a găsit niciun medicament cu ID-ul specificat.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -466,7 +465,7 @@ namespace WindowsFormsApp1
 
         private void ActualizeazaFisierulDeDate()
         {
-            // Înlocuiește conținutul fișierului cu informațiile actualizate despre medicamente
+           
             string directoryPath = Path.GetDirectoryName(Application.ExecutablePath);
             string filePath = Path.Combine(directoryPath, "Medicamente.Txt");
 
@@ -487,26 +486,26 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            // Găsește medicamentul în listă bazat pe ID-ul introdus
+           
             var medicamentStergere = medicamente.FirstOrDefault(med => med.ID == idMedicamentStergere);
 
             if (medicamentStergere != null)
             {
-                // Eliminați medicamentul din lista de medicamente
+                
                 medicamente.Remove(medicamentStergere);
 
-                // Actualizați fișierul de date cu modificările efectuate
+                
                 ActualizeazaFisierulDeDate();
 
-                // Oferiți feedback utilizatorului că medicamentul a fost șters
+               
                 MessageBox.Show($"Medicamentul cu ID-ul {idMedicamentStergere} a fost șters cu succes.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Curățați conținutul câmpului de introducere a ID-ului pentru ștergere
+               
                 txtIDMedicamentStergere.Text = "";
             }
             else
             {
-                // Oferiți feedback utilizatorului că medicamentul nu a fost găsit
+               
                 MessageBox.Show("Nu s-a găsit niciun medicament cu ID-ul specificat.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

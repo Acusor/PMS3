@@ -61,6 +61,8 @@
             this.txtNume = new System.Windows.Forms.TextBox();
             this.btnAdaugaMedicamnete = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.listBoxRezultateCautareMedicamente = new System.Windows.Forms.ListBox();
             this.cmbCriteriuCautareMedicamente = new System.Windows.Forms.ComboBox();
             this.txtCautareMedicament = new System.Windows.Forms.TextBox();
@@ -90,8 +92,6 @@
             this.txtIDMedicamentStergere = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -134,6 +134,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.Controls.Add(this.label30);
             this.tabPage1.Controls.Add(this.btnStergereMedicamente);
             this.tabPage1.Controls.Add(this.btnAdaugareMedicamente);
@@ -146,13 +147,13 @@
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.flowLayoutPanelMedicamente);
             this.tabPage1.Controls.Add(this.btnCautareMedicamente);
+            this.tabPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(926, 498);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label30
             // 
@@ -482,6 +483,26 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(26, 362);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(216, 27);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Introducere date:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(26, 271);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 27);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Criteriu:";
+            // 
             // listBoxRezultateCautareMedicamente
             // 
             this.listBoxRezultateCautareMedicamente.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -804,26 +825,6 @@
             this.label22.Size = new System.Drawing.Size(134, 36);
             this.label22.TabIndex = 1;
             this.label22.Text = "Stergere";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(26, 271);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 27);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "Criteriu:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(26, 362);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(216, 27);
-            this.label15.TabIndex = 39;
-            this.label15.Text = "Introducere date:";
             // 
             // stock
             // 

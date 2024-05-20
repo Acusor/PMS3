@@ -266,7 +266,6 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            // Cautăm angajatul în listă după ID
             Angajati angajatDeSters = membri.FirstOrDefault(angajat => angajat.ID == id);
 
             if (angajatDeSters == null)
@@ -275,12 +274,12 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            // Ștergem angajatul din listă și actualizăm interfața
+           
             membri.Remove(angajatDeSters);
-            flowLayoutPanelAngajati.Controls.Clear(); // Ștergem toți angajații din flowLayoutPanel
-            membri.ForEach(AdaugaAngajatLaFormular); // Adăugăm din nou toți angajații în flowLayoutPanel
+            flowLayoutPanelAngajati.Controls.Clear(); 
+            membri.ForEach(AdaugaAngajatLaFormular); 
 
-            // Actualizăm și fișierul text cu lista de angajați
+          
             string directoryPath = Path.GetDirectoryName(Application.ExecutablePath);
             string filePath = Path.Combine(directoryPath, "Angajati.Txt");
             File.WriteAllLines(filePath, membri.Select(angajat =>
@@ -300,21 +299,21 @@ namespace WindowsFormsApp1
         {
 
             
-            // Verificăm dacă s-a selectat un criteriu de căutare și s-a introdus o valoare pentru căutare
+           
             if (string.IsNullOrWhiteSpace(txtCautareAngajat.Text) || cmbCriteriuCautare.SelectedIndex == -1)
             {
                 MessageBox.Show("Selectați un criteriu de căutare și introduceți o valoare pentru căutare.");
                 return;
             }
 
-            // Obținem criteriul de căutare și valoarea căutată din interfață
+     
             string criteriu = cmbCriteriuCautare.SelectedItem.ToString();
-            string valoareCautata = txtCautareAngajat.Text.ToLower(); // Folosim ToLower pentru a face căutarea insensibilă la majuscule/minuscule
+            string valoareCautata = txtCautareAngajat.Text.ToLower();
 
-            // Creăm o listă pentru stocarea rezultatelor căutării
+         
             List<Angajati> rezultateCautare = new List<Angajati>();
 
-            // Căutăm în lista de angajați în funcție de criteriul selectat
+            
             switch (criteriu)
             {
                 case "Nume":
@@ -347,7 +346,7 @@ namespace WindowsFormsApp1
 
             listBoxRezultateCautare.Visible = true;
 
-            // Afisăm rezultatele în ListBox
+         
             listBoxRezultateCautare.Items.Clear();
             if (rezultateCautare.Any())
             {
@@ -364,64 +363,64 @@ namespace WindowsFormsApp1
 
         private void btnEditeazaAngajat_Click(object sender, EventArgs e)
         {
-            // Verifică dacă un angajat este selectat pentru editare
+           
             if (string.IsNullOrWhiteSpace(txtIDAngajatEditare.Text))
             {
                 MessageBox.Show("Introduceți ID-ul angajatului pentru editare.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Convertirea ID-ului într-un număr întreg
+         
             if (!int.TryParse(txtIDAngajatEditare.Text, out int idEditare))
             {
                 MessageBox.Show("ID-ul angajatului nu este valid.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Găsește angajatul în listă bazat pe ID-ul introdus
+        
             Angajati angajatEditat = membri.FirstOrDefault(angajat => angajat.ID == idEditare);
 
             if (angajatEditat != null)
             {
-                // Verifică dacă toate câmpurile sunt completate
+         
                 if (string.IsNullOrWhiteSpace(txtNumeEditare.Text) || string.IsNullOrWhiteSpace(txtPrenumeEditare.Text) || string.IsNullOrWhiteSpace(txtGenEditare.Text) || string.IsNullOrWhiteSpace(txtFunctieEditare.Text) || string.IsNullOrWhiteSpace(txtContactEditare.Text))
                 {
                     MessageBox.Show("Completați toate câmpurile.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Actualizează informațiile angajatului cu noile valori introduse de utilizator
+
                 angajatEditat.Nume = txtNumeEditare.Text;
                 angajatEditat.Prenume = txtPrenumeEditare.Text;
                 angajatEditat.Gen = txtGenEditare.Text;
                 angajatEditat.Functie = txtFunctieEditare.Text;
                 angajatEditat.Contact = txtContactEditare.Text;
 
-                // Actualizează sursa de date (de exemplu, fișierul text) cu modificările efectuate
+               
                 ActualizeazaFisierulDeDateAngajati();
 
-                // Oferă feedback că editarea s-a realizat cu succes
+           
                 MessageBox.Show("Angajatul a fost actualizat cu succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Oferă feedback că angajatul nu a fost găsit
+          
                 MessageBox.Show("Nu s-a găsit niciun angajat cu ID-ul specificat.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void ActualizeazaFisierulDeDateAngajati()
         {
-            // Definirea calei către fișierul de date
+           
             string filePath = "Angajati.Txt";
 
-            // Verifică dacă fișierul există
+    
             if (File.Exists(filePath))
             {
-                // Sterge conținutul fișierului
+            
                 File.WriteAllText(filePath, string.Empty);
 
-                // Adaugă în fișierul de date fiecare angajat din listă
+            
                 foreach (var angajat in membri)
                 {
                     string linieAngajat = $"{angajat.Nume},{angajat.Prenume},{angajat.Gen},{angajat.ID},{angajat.Functie},{angajat.Contact}";

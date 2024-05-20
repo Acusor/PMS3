@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,9 +13,11 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        private bool isDarkMode = false;
         public Form1()
         {
             InitializeComponent();
+           
         }
         
         public void loadform(object Form)
@@ -39,6 +42,7 @@ namespace WindowsFormsApp1
             btnStock.BackColor = Color.White;
             angajati.BackColor = Color.White;
             furnizori.BackColor = Color.White;
+            Info.BackColor = Color.White;
 
         }
 
@@ -47,6 +51,7 @@ namespace WindowsFormsApp1
             ResetButtonColors();
             loadform(new stock());
             btnStock.BackColor = Color.Cornsilk;
+        
         }
 
         private void angajati_Click(object sender, EventArgs e)
@@ -63,12 +68,6 @@ namespace WindowsFormsApp1
             furnizori.BackColor = Color.Cornsilk;
         }
 
-        private void Configurare_Click(object sender, EventArgs e)
-        {
-            ResetButtonColors();
-            loadform(new Configurare());
-            Configurare.BackColor = Color.Cornsilk;
-        }
 
 
         private void iesire_Click(object sender, EventArgs e)
@@ -76,5 +75,16 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
+        private void Info_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            loadform(new Info());
+            Info.BackColor = Color.Cornsilk;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

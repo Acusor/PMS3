@@ -31,8 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.Configurare = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Info = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iesire = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
@@ -41,6 +40,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainpanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.folderBrowserDialog2 = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainpanel.SuspendLayout();
@@ -50,8 +51,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.Configurare);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.Info);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.iesire);
             this.panel1.Controls.Add(this.btnStock);
@@ -72,46 +72,32 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "PMS";
             // 
-            // Configurare
+            // Info
             // 
-            this.Configurare.BackColor = System.Drawing.Color.White;
-            this.Configurare.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Configurare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Configurare.Image = global::WindowsFormsApp1.Properties.Resources.settings;
-            this.Configurare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Configurare.Location = new System.Drawing.Point(30, 408);
-            this.Configurare.Name = "Configurare";
-            this.Configurare.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Configurare.Size = new System.Drawing.Size(208, 47);
-            this.Configurare.TabIndex = 8;
-            this.Configurare.Text = "CONFIGURARE";
-            this.Configurare.UseVisualStyleBackColor = false;
-            this.Configurare.Click += new System.EventHandler(this.Configurare_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Image = global::WindowsFormsApp1.Properties.Resources.home;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(30, 470);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(208, 47);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "INFO";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Info.BackColor = System.Drawing.Color.White;
+            this.Info.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Info.Image = global::WindowsFormsApp1.Properties.Resources.home;
+            this.Info.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Info.Location = new System.Drawing.Point(30, 412);
+            this.Info.Name = "Info";
+            this.Info.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Info.Size = new System.Drawing.Size(208, 47);
+            this.Info.TabIndex = 7;
+            this.Info.Text = "INFO";
+            this.Info.UseVisualStyleBackColor = false;
+            this.Info.Click += new System.EventHandler(this.Info_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.pharmacy_icon__2_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(78, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(136, 133);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // iesire
             // 
@@ -120,7 +106,7 @@
             this.iesire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.iesire.Image = ((System.Drawing.Image)(resources.GetObject("iesire.Image")));
             this.iesire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iesire.Location = new System.Drawing.Point(30, 537);
+            this.iesire.Location = new System.Drawing.Point(30, 479);
             this.iesire.Name = "iesire";
             this.iesire.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.iesire.Size = new System.Drawing.Size(208, 47);
@@ -208,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1159, 628);
+            this.ClientSize = new System.Drawing.Size(1163, 628);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -235,9 +221,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel mainpanel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button Configurare;
+        private System.Windows.Forms.Button Info;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog2;
     }
 }
 

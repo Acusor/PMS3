@@ -152,7 +152,7 @@ namespace WindowsFormsApp1
         }
 
 
-        //working..
+        
         private void btnAdaugareFurnizor_Click_1(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage2;
@@ -282,21 +282,17 @@ namespace WindowsFormsApp1
 
         private void btnCautaFurnizor_Click(object sender, EventArgs e)
         {
-            // Verificăm dacă s-a selectat un criteriu de căutare și s-a introdus o valoare pentru căutare
+           
             if (string.IsNullOrWhiteSpace(txtCautareFurnizor.Text) || cmbCriteriuCautareFurnizor.SelectedIndex == -1)
             {
                 MessageBox.Show("Selectați un criteriu de căutare și introduceți o valoare pentru căutare.");
                 return;
             }
 
-            // Obținem criteriul de căutare și valoarea căutată din interfață
+
             string criteriu = cmbCriteriuCautareFurnizor.SelectedItem.ToString();
-            string valoareCautata = txtCautareFurnizor.Text.ToLower(); // Folosim ToLower pentru a face căutarea insensibilă la majuscule/minuscule
-
-            // Creăm o listă pentru stocarea rezultatelor căutării
+            string valoareCautata = txtCautareFurnizor.Text.ToLower(); 
             List<Furnizori> rezultateCautare = new List<Furnizori>();
-
-            // Căutăm în lista de furnizori în funcție de criteriul selectat
             switch (criteriu)
             {
                 case "Nume":
@@ -327,7 +323,7 @@ namespace WindowsFormsApp1
 
             listBoxRezultateCautareFurnizor.Visible = true;
 
-            // Afisăm rezultatele în ListBox
+            
             listBoxRezultateCautareFurnizor.Items.Clear();
             if (rezultateCautare.Any())
             {
@@ -344,7 +340,7 @@ namespace WindowsFormsApp1
 
         private void btnEditeazaFurnizor_Click(object sender, EventArgs e)
         {
-            // Verifică dacă furnizorul este selectat pentru editare
+          
             string numeFurnizorEditare = txtNumeFurnizorEditare.Text.Trim();
             if (string.IsNullOrWhiteSpace(numeFurnizorEditare))
             {
@@ -352,47 +348,47 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            // Găsește furnizorul în listă bazat pe numele introdus
+
             Furnizori furnizorEditat = listaFurnizori.FirstOrDefault(furnizor => furnizor.Nume.Equals(numeFurnizorEditare, StringComparison.OrdinalIgnoreCase));
 
             if (furnizorEditat != null)
             {
-                // Verifică dacă toate câmpurile sunt completate
+               
                 if (string.IsNullOrWhiteSpace(txtNumeFurnizorEditare.Text) || string.IsNullOrWhiteSpace(txtContactFurnizorEditare.Text) || string.IsNullOrWhiteSpace(txtProduseFurnizorEditare.Text) || string.IsNullOrWhiteSpace(txtPlataFurnizorEditare.Text) || comboBoxStockStatusEditare.SelectedIndex == -1)
                 {
                     MessageBox.Show("Completați toate câmpurile.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Actualizează informațiile furnizorului cu noile valori introduse de utilizator
+              
                 furnizorEditat.Contact = txtContactFurnizorEditare.Text;
                 furnizorEditat.Produse = txtProduseFurnizorEditare.Text;
                 furnizorEditat.Plata = txtPlataFurnizorEditare.Text;
                 furnizorEditat.Stock = comboBoxStockStatusEditare.SelectedIndex == 0 ? StockStatus.Da : StockStatus.Nu;
 
-                // Actualizează sursa de date (de exemplu, fișierul text) cu modificările efectuate
+               
                 ActualizeazaFisierulDeDateFurnizori();
 
-                // Oferă feedback că editarea s-a realizat cu succes
+              
                 MessageBox.Show("Furnizorul a fost actualizat cu succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Oferă feedback că furnizorul nu a fost găsit
+                
                 MessageBox.Show("Nu s-a găsit niciun furnizor cu numele specificat.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void ActualizeazaFisierulDeDateFurnizori()
         {
-            // Definirea calei către fișierul de date
+            
             string directoryPath = Path.GetDirectoryName(Application.ExecutablePath);
             string filePath = Path.Combine(directoryPath, "Furnizori.Txt");
 
-            // Verifică dacă fișierul există
+            
             if (File.Exists(filePath))
             {
-                // Creează o listă de linii actualizată cu noile informații despre furnizori
+               
                 List<string> updatedLines = new List<string>();
                 foreach (var furnizor in listaFurnizori)
                 {
@@ -400,7 +396,7 @@ namespace WindowsFormsApp1
                     updatedLines.Add(line);
                 }
 
-                // Suprascrie conținutul fișierului cu noile linii actualizate
+               
                 File.WriteAllLines(filePath, updatedLines);
             }
             else
