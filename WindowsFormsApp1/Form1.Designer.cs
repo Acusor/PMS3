@@ -125,7 +125,7 @@
             this.btnStock.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnStock.Size = new System.Drawing.Size(208, 47);
             this.btnStock.TabIndex = 2;
-            this.btnStock.Text = "STOCK PRODUSE";
+            this.btnStock.Text = "STOCK MEDICAMENTE";
             this.btnStock.UseVisualStyleBackColor = false;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
